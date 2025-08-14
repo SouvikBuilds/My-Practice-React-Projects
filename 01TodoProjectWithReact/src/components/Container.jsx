@@ -34,7 +34,12 @@ const Container = () => {
 
     // Delete Task
     const deleteTask = (taskId) => {
-        setAllTasks(allTasks.filter(task => task.TaskId !== taskId))
+        const confirmed = confirm("Are You Sure?")
+        if (confirmed) {
+            setAllTasks(allTasks.filter(task => task.TaskId !== taskId))
+        } else {
+            return
+        }
     }
 
     // Toggle Complete
@@ -46,9 +51,14 @@ const Container = () => {
 
     // Edit Task
     const startEditTask = (taskId) => {
-        const taskToEdit = allTasks.find(task => task.TaskId === taskId)
-        setTaskInput(taskToEdit.Task)
-        setIsEditing(taskId)
+        const confirmed = confirm("Are You Sure?")
+        if (confirmed) {
+            const taskToEdit = allTasks.find(task => task.TaskId === taskId)
+            setTaskInput(taskToEdit.Task)
+            setIsEditing(taskId)
+        } else {
+            return
+        }
     }
 
     // Save to localStorage whenever allTasks changes
@@ -89,7 +99,7 @@ const Container = () => {
                 {allTasks.map((task, index) => (
                     <div
                         key={task.TaskId}
-                        className='flex flex-row items-center gap-[100px] mt-[20px] bg-[black] px-5 py-6 rounded-lg shadow-lg'
+                        className='flex flex-row justify-between items-center gap-[100px] mt-[20px] bg-[black] px-5 py-6 rounded-lg shadow-lg'
                     >
                         <div className='flex flex-row items-center gap-2'>
                             <h2 className={`text-2xl ${task.isCompleted ? "line-through text-gray-400" : "text-white"}`}>
