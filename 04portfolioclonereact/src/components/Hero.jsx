@@ -35,7 +35,7 @@ const Hero = () => {
         setUserEmail("")
     }
     return (
-        <div className='flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-3 px-4 sm:px-6 md:px-8 lg:px-[100px] py-[20px] max-w-[1500px] mx-auto'>
+        <div className='flex flex-col-reverse lg:flex-row items-center justify-between gap-6 lg:gap-3 px-4 sm:px-6 md:px-8 lg:px-[100px] py-[20px] max-w-[1500px] mx-auto'>
             <div className='heading flex flex-col gap-4 w-full lg:w-auto'>
                 <div>
                     <h2 className='text-3xl sm:text-4xl md:text-5xl lg:text-[48px] font-semibold leading-tight lg:leading-[60px] text-center lg:text-left'>

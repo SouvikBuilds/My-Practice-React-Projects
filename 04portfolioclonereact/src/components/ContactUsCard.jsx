@@ -20,6 +20,11 @@ const ContactUsCard = () => {
             alert("Please Fill The Fields First")
             return
         }
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert("Please enter a valid email address");
+            return;
+        }
         const allUserContactFormDetails = {
             FirstName: firstName,
             lastName: lastName,
